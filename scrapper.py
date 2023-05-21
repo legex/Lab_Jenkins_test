@@ -11,10 +11,11 @@ class URLAccess():
     def urlaccessed(url):
         try:
             req=sslbypass.get_legacy_session().get(url)
-            print(req.status_code)
+            return req.status_code
         except ConnectionError:
-            print("404 Not found")
+            return "404 Not found"
 
 
 if __name__== '__main__':
-    run=URLAccess()
+    run=URLAccess.urlaccessed(url="https://www.youtube.com")
+    print(run)
