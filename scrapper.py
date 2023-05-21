@@ -11,9 +11,9 @@ class URLAccess():
     def urlaccessed(url):
         try:
             req=sslbypass.get_legacy_session().get(url)
-            return req.status_code
+            return print(req.status_code)
         except ConnectionError:
-            return "404 Not found"
+            return print("404 Not found")
 
 
 if __name__== '__main__':
